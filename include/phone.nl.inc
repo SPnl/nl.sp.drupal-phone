@@ -40,11 +40,7 @@ function valid_nl_phone_number($phonenumber) {
 
   // define regular expression
   $regex = '/
-  ([0]{1}[6]{1}[-\s]+[1-9]{1}[\s]*([0-9]{1}[\s]*){7})				# Mobile phonenumber
-  |
-  ([0]{1}[1-9]{1}[0-9]{2}[-\s]+[1-9]{1}[\s]*([0-9]{1}[\s]*){5})		# Phonenumber with 4 digit area code
-  |
-  ([0]{1}[1-9]{1}[0-9]{1}[-\s]+[1-9]{1}[\s]*([0-9]{1}[\s]*){6})		# Phonenumber with 3 digit area code
+  (.*)				# Mobile phonenumber
   /x';
 
   // return true if valid, false otherwise
@@ -58,19 +54,19 @@ function valid_nl_phone_number($phonenumber) {
  * @return string Returns a string containting the phone number with some formatting.
  */
 function format_nl_phone_number($phonenumber, $field) {
-
+  /*
   $areacode = $localnumber = '';
   // Mobile number
-  if (preg_match('/([0]{1}[6]{1}[-\s]+[1-9]{1}[\s]*([0-9]{1}[\s]*){7})/', $phonenumber)) {
-        preg_match('/([0]{1}[6]{1})[-\s]+([1-9]{1}[\s]*([0-9]{1}[\s]*){7})/', $phonenumber, $matches);
+  if (preg_match('/([0]{1}[6]{1}[-\s]*[1-9]{1}[\s]*([0-9]{1}[\s]*){7})/', $phonenumber)) {
+        preg_match('/([0]{1}[6]{1})[-\s]*([1-9]{1}[\s]*([0-9]{1}[\s]*){7})/', $phonenumber, $matches);
     }
   // Phonenumber with 4 digit area code
-  if (preg_match('/([0]{1}[1-9]{1}[0-9]{2}[-\s]+[1-9]{1}[\s]*([0-9]{1}[\s]*){5})/', $phonenumber)) {
-      preg_match('/([0]{1}[1-9]{1}[0-9]{2})[-\s]+([1-9]{1}[\s]*([0-9]{1}[\s]*){5})/', $phonenumber, $matches);
+  if (preg_match('/([0]{1}[1-9]{1}[0-9]{2}[-\s]*[1-9]{1}[\s]*([0-9]{1}[\s]*){5})/', $phonenumber)) {
+      preg_match('/([0]{1}[1-9]{1}[0-9]{2})[-\s]*([1-9]{1}[\s]*([0-9]{1}[\s]*){5})/', $phonenumber, $matches);
   }
   // Phonenumber with 3 digit area code
-  if (preg_match('/([0]{1}[1-9]{1}[0-9]{1}[-\s]+[1-9]{1}[\s]*([0-9]{1}[\s]*){6})/', $phonenumber)) {
-      preg_match('/([0]{1}[1-9]{1}[0-9]{1})[-\s]+([1-9]{1}[\s]*([0-9]{1}[\s]*){6})/', $phonenumber, $matches);
+  if (preg_match('/([0]{1}[1-9]{1}[0-9]{1}[-\s]*[1-9]{1}[\s]*([0-9]{1}[\s]*){6})/', $phonenumber)) {
+      preg_match('/([0]{1}[1-9]{1}[0-9]{1})[-\s]*([1-9]{1}[\s]*([0-9]{1}[\s]*){6})/', $phonenumber, $matches);
   }
 
   $areacode = $matches[1];
@@ -82,6 +78,6 @@ function format_nl_phone_number($phonenumber, $field) {
       $areacode = preg_replace('/^0/', '', $areacode);
       $phonenumber = '+31-'. $areacode. '-'. $localnumber;
   }
-
+  */
   return $phonenumber;
 }
