@@ -1,0 +1,6 @@
+{
+  "name": "spnl/nl.sp.drupal-spnet-phone",
+  "description": "The phone module allows administrators to define a field type for phone numbers.",
+  "type": "drupal-custom-module",
+  "license": "GPL-2.0"
+}
